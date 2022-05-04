@@ -1,5 +1,4 @@
-
-    h1{
+h1{
         margin-left: 50px;
         padding: 10px;
         border: 1px solid Green;}
@@ -41,8 +40,6 @@
     #j{list-style: none; 
         background: url(pngegg.png) no-repeat 1 4px;
         padding-left: 24px; }
-    
-    
     
     .block1 {
         text-align: center;
@@ -88,7 +85,7 @@
     .w6:hover {
       transform: scale(1.2); /* Увеличиваем масштаб */
     }
-    {задание 6}
+  
     .yandex{
           background-color: #B0C4DE;
           border: none;
@@ -103,7 +100,7 @@
     
     
     }
-    {задание 7}
+
     .one{ opacity: 0.5;}
     a{display: inline-block;}
     img{transition: all .3s ease; }
@@ -136,7 +133,7 @@
     background-color: #B0E0E6;
         border-radius: 100px;
     }
-    {10 задание}
+
     a.button1 {
       position: relative;
       color: white;
@@ -161,7 +158,7 @@
       transition: .5s linear;
       background-position: -200% 0, 0 0;
     }
-    {11 задание}
+
     div {
       width: 100px;
       height: 100px;
