@@ -1,44 +1,28 @@
-    @media (max-width: 757px){ //для мобильных
-    section{
-    background-color: #77dde7;
-    color: #7f0083;
-    }
-    }
-    @media (min-width:768px) and (max-width:1365px) {// для компов
-    section{
-    background-color: #E9967A;
-    color: #8B4513;
-    }
-    }
-    body{
-    margin: 0;
-    animation-duration: 3s; animation-name: slidein
-    }
+   body{margin: 0;
+    animation-duration: 3s; animation-name: slidein}            
     @keyframes slidein{
-    from{
-    margin-left: 100%;
-    width: 300%;
+      from{margin-left: 100%;
+           width: 300%;}
+       to{margin-left: 0%;
+          width: 100%;}
     }
-    to{
-    margin-left: 0%;
-    width: 100%;
-    }
+@media (min-width:768px) and (max-width:2000px) {
+                body {background-color: #fff8dc;
+                color: black;
+                line-height: 1.4;}
+            }
+            
+            @media (max-width:757px) {
+               body {background-color: #77dde7;
+                color: darkred;
+                line-height: 1.4;
+                font-size: 13px;}
+            }
     }
 /*1*/
-h1{margin-left: 50px;
-   padding: 10px;
-   border: 1px solid Green;
-   width: 400px;
-   height: 20px; 
-   font-family: monospace;}    
-h2 {margin-left: 50px;
-    padding: 10px;
-    border: 1px solid Pink;
-    width: 400px;
-    height: 20px;
-    font-family: monospace;}
-h3,h4,h5,h6 { text-align:center;
-              font-family: monospace;}
+#h1,h2,h3,h4,h5,h6{ text-align:center;
+                    font-family: monospace;
+                    font-size: large;}
 /*2*/
 #a{text-align:center;
    font-family: cursive;
@@ -67,7 +51,8 @@ h3,h4,h5,h6 { text-align:center;
 /*3*/
 #f{text-align:center;
   font-family: monospace;
-   background-color:DodgerBlue;
+  font-size: large;       
+  background-color:DodgerBlue;
    padding: 10px ;
    border: 5px dashed #FFD700;
    width: 400px;
@@ -77,9 +62,11 @@ h3,h4,h5,h6 { text-align:center;
 
 
 /*4 Задание*/
-#h{text-align:center;
+#h{
+ text-align:center;
  font-family: monospace;}
 #l{ text-align:center;
+    font-size: large;
     margin: auto;
     font-family: monospace;
     padding-top:30px;
@@ -99,27 +86,28 @@ h3,h4,h5,h6 { text-align:center;
         text-align: center;
         margin:auto;
         width: 20em;}
-.w1{
+.w1{font-size: large;
     list-style-type: '★';
     transition: 1s;}
 .w1:hover {transform: scale(1.2);}
-.w2{
+.w2{font-size: large;
     list-style-type: '☆';
         transition: 1s;}
 .w2:hover {transform: scale(1.2);}
-.w3{
+.w3{font-size: large;
     list-style-type: '✪';
     transition: 1s;}
 .w3:hover {transform: scale(1.2);}
-.w4{
+.w4{font-size: large;
     list-style-type: '✲';
     transition: 1s;}
 .w4:hover {transform: scale(1.2);}
-.w5{
+.w5{font-size: large;
     list-style-type: '⍟';
         transition: 1s;}
 .w5:hover {transform: scale(1.2);}
-.w6{list-style-type: '✫';
+.w6{font-size: large;
+    list-style-type: '✫';
    transition: 1s;
 }
 .w6:hover {transform: scale(1.2);}
@@ -156,8 +144,7 @@ img{transition: all .3s ease; }
       border-radius: 20px;
       margin-bottom: 20px;
 border-width: 5px 10px 15px 3px;}
-    input[type=text]{
-        
+    input[type=text]{ 
     width: 90%;
     border: outset;
     padding: 10px;
@@ -179,8 +166,8 @@ border-width: 5px 10px 15px 3px;}
         border-radius: 100px;
     }
 #z{padding:20px;
- width: 400px;
-    height: 20px;}
+  width: 550px;
+  height: 10px;}
 /*9*/
 a.button1 {
       position: relative;
@@ -208,4 +195,6 @@ a.button1 {
       transition: .5s linear;
       background-position: -200% 0, 0 0;
     }
+
+
 
