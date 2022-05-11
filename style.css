@@ -1,15 +1,44 @@
+    @media (max-width: 757px){ //для мобильных
+    section{
+    background-color: #77dde7;
+    color: #7f0083;
+    }
+    }
+    @media (min-width:768px) and (max-width:1365px) {// для компов
+    section{
+    background-color: #E9967A;
+    color: #8B4513;
+    }
+    }
+    body{
+    margin: 0;
+    animation-duration: 3s; animation-name: slidein
+    }
+    @keyframes slidein{
+    from{
+    margin-left: 100%;
+    width: 300%;
+    }
+    to{
+    margin-left: 0%;
+    width: 100%;
+    }
+    }
 /*1*/
 h1{margin-left: 50px;
    padding: 10px;
    border: 1px solid Green;
    width: 400px;
-   height: 20px; }    
+   height: 20px; 
+   font-family: monospace;}    
 h2 {margin-left: 50px;
     padding: 10px;
     border: 1px solid Pink;
     width: 400px;
-    height: 20px;}
-h3,h4,h5,h6 { text-align:center;}
+    height: 20px;
+    font-family: monospace;}
+h3,h4,h5,h6 { text-align:center;
+              font-family: monospace;}
 /*2*/
 #a{text-align:center;
    font-family: cursive;
@@ -27,6 +56,7 @@ h3,h4,h5,h6 { text-align:center;}
 #e {text-align:center;
     font-family:sans-serif;
     font-size:30px;
+    
     -webkit-animation: e 1s linear infinite;
      animation: e 1s linear infinite;}
     @-webkit-keyframes e {
@@ -36,9 +66,10 @@ h3,h4,h5,h6 { text-align:center;}
 
 /*3*/
 #f{text-align:center;
-   background-color:blue;
+  font-family: monospace;
+   background-color:DodgerBlue;
    padding: 10px ;
-   border: 5px dashed Yellow;
+   border: 5px dashed #FFD700;
    width: 400px;
    height: 20px;
    margin: 20px auto;} 
@@ -46,15 +77,17 @@ h3,h4,h5,h6 { text-align:center;}
 
 
 /*4 Задание*/
-#h{text-align:center;}
+#h{text-align:center;
+ font-family: monospace;}
 #l{ text-align:center;
-    margin: 20px auto;
+    margin: auto;
+    font-family: monospace;
     padding-top:30px;
-    padding-right: 25px;
-    padding-bottom: 30px;
-    padding-left: 25px;
-    width: 1200px;
-    height: 10px; 
+    padding-right:25px;
+    padding-bottom:30px;
+    padding-left:25px;
+    width: 950px;
+    height: 5px; 
     background: #fc0; 
     border: 10px solid #fff;
     border-style:double;} 
@@ -62,6 +95,7 @@ h3,h4,h5,h6 { text-align:center;}
 
 /*5*/    
 .block1 {
+        font-family: monospace;
         text-align: center;
         margin:auto;
         width: 20em;}
@@ -94,13 +128,14 @@ h3,h4,h5,h6 { text-align:center;}
 .yandex{background-color: #B0C4DE;
         border: none;
         color: white;
-        padding: 400px 400px;
+        padding: 40px 40px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
         font-size: 100px;
         margin: 5px 5px;
-        border-radius: 12px;}
+        border-radius: 12px;
+        font-family: monospace;}
 
 /*7*/
 .one{ opacity: 0.5;}
@@ -113,22 +148,28 @@ img{transition: all .3s ease; }
 
 
 /*8*/
-#bord{border: solid #B0C4DE; 
-     border-radius: 10px;
-     margin-bottom: 10px;}
+#bord{margin: auto;
+      text-align:center;
+      font-family: monospace;
+      font-size:large;
+      border:outset #B0C4DE; 
+      border-radius: 20px;
+      margin-bottom: 20px;
+border-width: 5px 10px 15px 3px;}
     input[type=text]{
+        
     width: 90%;
+    border: outset;
     padding: 10px;
     border-radius: 14px;
-    resize: vertical;
-    box-shadow:0 0 10px rgba(0,0,0,0.3);
-    transition: .3s box-shadow;    
+    margin:10px 0;
     }
     input[type=submit] {
+    margin:10px 0;
     background-color: #B0C4DE;
     color: white;
     padding: 12px 20px;
-    border: none;
+    border: outset;
     border-radius: 100px;
     cursor: pointer;
     float: left;
@@ -137,6 +178,9 @@ img{transition: all .3s ease; }
     background-color: #B0E0E6;
         border-radius: 100px;
     }
+#z{padding:20px;
+ width: 400px;
+    height: 20px;}
 /*9*/
 a.button1 {
       position: relative;
@@ -145,6 +189,8 @@ a.button1 {
       text-decoration: none;
       text-shadow: -1px -1px #000;
       user-select: none;
+      font-family: monospace;
+      font-size: large;
       padding: .8em 2em;
       outline: none;
       background-color: #000;
