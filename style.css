@@ -86,27 +86,27 @@
         text-align: center;
         margin:auto;
         width: 20em;}
-.w1{font-size: large;
+.w1{font-size: 30px;
     list-style-type: '★';
     transition: 1s;}
 .w1:hover {transform: scale(1.2);}
-.w2{font-size: large;
+.w2{font-size: 30px;
     list-style-type: '☆';
         transition: 1s;}
 .w2:hover {transform: scale(1.2);}
-.w3{font-size: large;
+.w3{font-size: 30px;
     list-style-type: '✪';
     transition: 1s;}
 .w3:hover {transform: scale(1.2);}
-.w4{font-size: large;
+.w4{font-size: 30px;
     list-style-type: '✲';
     transition: 1s;}
 .w4:hover {transform: scale(1.2);}
-.w5{font-size: large;
+.w5{font-size: 30px;
     list-style-type: '⍟';
         transition: 1s;}
 .w5:hover {transform: scale(1.2);}
-.w6{font-size: large;
+.w6{font-size: 30px;
     list-style-type: '✫';
    transition: 1s;
 }
