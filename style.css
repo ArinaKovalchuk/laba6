@@ -6,12 +6,12 @@
        to{margin-left: 0%;
           width: 100%;}
     }
-@media screen and (min-width:768px) and (max-width:2000px) {
+@media (min-width:768px) and (max-width:2000px) {
                 body {background-color: #fff8dc;
                 color: black;
                 line-height: 1.4;}
             }
- @media screen and (max-width:757px) {
+ @media and (max-width:757px) {
                body {background-color: #77dde7;
                 color: darkred;
                 line-height: 1.4;
