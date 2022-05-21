@@ -3,7 +3,205 @@
 <head>
         <meta charset="utf-8">
         <title>Learn.html</title>
-        <link rel="stylesheet" href="style.css"> 
+        <style>
+ @media (min-width:768px) and (max-width:2000px) {
+                body {background-color: #fff8dc;
+                color: black;
+                line-height: 1.4;}
+            }
+ @media (max-width:757px) {
+               body {background-color: #77dde7;
+                color: darkred;
+                line-height: 1.4;
+                font-size: 13px;}
+            }
+    }
+   body{margin: 0;
+    animation-duration: 3s; animation-name: slidein}            
+    @keyframes slidein{
+      from{margin-left: 100%;
+           width: 300%;}
+       to{margin-left: 0%;
+          width: 100%;}
+    }
+/*1*/
+#h1,h2,h3,h4,h5,h6{ text-align:center;
+                    font-family: monospace;
+                    font-size: large;}
+/*2*/
+#a{text-align:center;
+   font-family: cursive;
+   font-size: medium;
+   text-transform:capitalize;}
+#b {text-align:left;
+    font-family:fantasy;
+    font-size: large;}
+#c {text-align:right;
+    font-family: inherit;
+    font-size: small;}
+#d {text-align:justify;
+    font-family: monospace;
+    font-size:smaller;}
+#e {text-align:center;
+    font-family:sans-serif;
+    font-size:30px;
+    
+    -webkit-animation: e 1s linear infinite;
+     animation: e 1s linear infinite;}
+    @-webkit-keyframes e {
+      100% { color: rgba(34, 34, 34, 0); }}
+    @keyframes e {
+      100% { color: rgba(34, 34, 34, 0); }}
+
+/*3*/
+#f{text-align:center;
+  font-family: monospace;
+  font-size: large;       
+  background-color:DodgerBlue;
+   padding: 10px ;
+   border: 5px dashed #FFD700;
+   width: 400px;
+   height: 20px;
+   margin: 20px auto;} 
+
+
+
+/*4 Задание*/
+#h{
+ text-align:center;
+ font-family: monospace;}
+#l{ text-align:center;
+    font-size: large;
+    margin: auto;
+    font-family: monospace;
+    padding-top:30px;
+    padding-right:25px;
+    padding-bottom:30px;
+    padding-left:25px;
+    width: 950px;
+    height: 5px; 
+    background: #fc0; 
+    border: 10px solid #fff;
+    border-style:double;} 
+
+
+/*5*/    
+.block1 {
+        font-family: monospace;
+        text-align: center;
+        margin:auto;
+        width: 20em;}
+.w1{font-size: 20px;
+    list-style-type: '★';
+    transition: 1s;}
+.w1:hover {transform: scale(1.2);}
+.w2{font-size: 20px;
+    list-style-type: '☆';
+        transition: 1s;}
+.w2:hover {transform: scale(1.2);}
+.w3{font-size: 20px;
+    list-style-type: '✪';
+    transition: 1s;}
+.w3:hover {transform: scale(1.2);}
+.w4{font-size: 20px;
+    list-style-type: '✲';
+    transition: 1s;}
+.w4:hover {transform: scale(1.2);}
+.w5{font-size: 20px;
+    list-style-type: '⍟';
+        transition: 1s;}
+.w5:hover {transform: scale(1.2);}
+.w6{font-size: 20px;
+    list-style-type: '✫';
+   transition: 1s;
+}
+.w6:hover {transform: scale(1.2);}
+  
+/*6*/
+.yandex{background-color: #B0C4DE;
+        border: none;
+        color: white;
+        padding: 40px 40px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 100px;
+        margin: 5px 5px;
+        border-radius: 12px;
+        font-family: monospace;}
+
+/*7*/
+.one{ opacity: 0.5;}
+a{display: inline-block;}
+a:hover img{opacity: 0;}
+img{transition: all .3s ease; }
+.pic1:hover{background-image: url("https://bugaga.ru/uploads/posts/2018-10/1538677684_osveschennye-ledniki-1.jpg");}
+.pic{transform: scale(-1, -1);}
+.pic1{background-size: cover;}
+
+
+/*8*/
+#bord{margin: auto;
+      text-align:center;
+      font-family: monospace;
+      font-size:large;
+      border:outset #B0C4DE; 
+      border-radius: 20px;
+      margin-bottom: 20px;
+border-width: 5px 10px 15px 3px;}
+    input[type=text]{ 
+    width: 90%;
+    border: outset;
+    padding: 10px;
+    border-radius: 14px;
+    margin:10px 0;
+    }
+    input[type=submit] {
+    margin:10px 0;
+    background-color: #B0C4DE;
+    color: white;
+    padding: 12px 20px;
+    border: outset;
+    border-radius: 100px;
+    cursor: pointer;
+    float: left;
+    }
+    input[type=submit]:hover {
+    background-color: #B0E0E6;
+        border-radius: 100px;
+    }
+#z{padding:20px;
+  width: 550px;
+  height: 10px;}
+/*9*/
+a.button1 {
+      position: relative;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      text-shadow: -1px -1px #000;
+      user-select: none;
+      font-family: monospace;
+      font-size: large;
+      padding: .8em 2em;
+      outline: none;
+      background-color: #000;
+      background-image: linear-gradient(45deg, rgba(255,255,255,.0) 30%, rgba(255,255,255,.8), rgba(255,255,255,.0) 70%), radial-gradient(190% 100% at 50% 0%, rgba(255,255,255,.7) 0%, rgba(255,255,255,.5) 50%, rgba(0,0,0,0) 50%);
+      background-repeat: no-repeat;
+      background-size: 200% 100%, auto;
+      background-position: 200% 0, 0 0;
+      box-shadow: rgba(0,0,0,.3) 0 2px 5px;
+    } 
+    a.button1:active {
+      top: 1px;
+      box-shadow: none;
+    }
+    a.button1:hover {
+      transition: .5s linear;
+      background-position: -200% 0, 0 0;
+    }
+        
+        </style>        
 </head>
     
 <body>  
