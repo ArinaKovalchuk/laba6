@@ -270,7 +270,7 @@ a.button1 {
     
 <section class="section_6" id="sect6">
   <p style="color:DarkOrange;font-family: monospace;font-size: large;"><strong>Задание 6</strong></p>
-        <a href = https://yandex.ru target="_blank"  class="yandex"><font color="#FF0000">Я</font>ндекс</a>
+        <a href = https://yandex.ru target="_blank"  class="yandex"  onclick="greet()"><font color="#FF0000">Я</font>ндекс</a>
 </section>
     
 <section class="section_7" id="sect7">
@@ -293,14 +293,50 @@ a.button1 {
     <label> Name</label>
     <input type='text' name='username' required>
     <label> Phone</label>
-    <input type='text'  name='usernumber' required>
+    <input type='text'  name='usernumber' class="tel" required>
     <label> Message</label>
     <input type="text"   name='question' id="z" >
-    <input type="submit" class ="type-1" value="Send Message">
+    <input type="submit" class ="type-1"  onclick="greet()" value="Send Message">
     </fieldset>
     </form>
 </section>
-    
+ <script>
+window.addEventListener("DOMContentLoaded", function() {
+    [].forEach.call( document.querySelectorAll('.tel'), function(input) {
+    var keyCode;
+    function mask(event) {
+        event.keyCode && (keyCode = event.keyCode);
+        var pos = this.selectionStart;
+        if (pos < 3) event.preventDefault();
+        var matrix = "+7 (___) ___ ____",
+            i = 0,
+            def = matrix.replace(/\D/g, ""),
+            val = this.value.replace(/\D/g, ""),
+            new_value = matrix.replace(/[_\d]/g, function(a) {
+                return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+            });
+        i = new_value.indexOf("_");
+        if (i != -1) {
+            i < 5 && (i = 3);
+            new_value = new_value.slice(0, i)
+        }
+        var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+            function(a) {
+                return "\\d{1," + a.length + "}"
+            }).replace(/[+()]/g, "\\$&");
+        reg = new RegExp("^" + reg + "$");
+        if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
+        if (event.type == "blur" && this.value.length < 5)  this.value = ""
+    }
+
+    input.addEventListener("input", mask, false);
+    input.addEventListener("focus", mask, false);
+    input.addEventListener("blur", mask, false);
+    input.addEventListener("keydown", mask, false)
+
+  });
+});
+ </script>   
     
 <section class="section_9" id="sect9">
     <p style="color:gold;font-family: monospace;font-size: large;"><strong>Задание 9</strong></p> 
@@ -511,15 +547,144 @@ a.button1 {
   </tr>
 </table>      
 </section><br> 
-    
 <section class="section_10" id="sect10">
   <p style="color:RoyalBlue;font-family: monospace;font-size:large;"><strong>Задание 10</strong></p>   
         <iframe width="560" height="315" src="https://www.youtube.com/embed/KiMtkJw-4gs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  <a href="#" class="button1"> Ссылка на видео</a>
+  <a href="#" class="button1"  class="open-popup"> Ссылка на видео</a>
 </section> 
-    
-    
-<section class="section_11" id="sect11"> 
+
+
+<style>
+  .open-popup {
+  display: inline-block;
+  border-radius: 25px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  }
+  
+  .open-popup span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  }
+  
+  .open-popup span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+  }
+  
+  .open-popup:hover span {
+  padding-right: 25px;
+  }
+  
+  .open-popup:hover span:after {
+  opacity: 1;
+  right: 0;
+  }
+  
+  .popup__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s all;
+  }
+  
+  .popup__bg.active {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.5s all;
+  }
+  
+  .popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  width: 400px;
+  padding: 25px;
+  transition: 0.5s all;
+  }
+  
+  .popup.active {
+  transform: translate(-50%, -50%) scale(1);
+  transition: 0.5s all;
+  }
+  
+  .close-popup {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  }
+  section1{
+  width: 500px;
+  height: 300px;
+  border: 1px dashed Gray;
+  padding: 100px 30%;
+  display: grid;
+  }
+  </style>
+<section>
+<div >
+  <button class="open-popup" onclick="console.log('Открываем видео с ютуб')"><span>YouTube</span></button>
+  </div>
+  <div class="popup__bg">
+  <div class="popup" id="bord" style="background-color: black; width: 50%; height: 50%;">
+  <img src="image/close.png" class="close-popup">
+  <iframe width="90%" height="100%" src="https://www.youtube.com/embed/cyuzt1Dp8X8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  </div>
+</section>
+<script>
+  let popupBg = document.querySelector('.popup__bg');
+  let popup = document.querySelector('.popup');
+  let openPopupButtons = document.querySelectorAll('.open-popup');
+  let closePopupButton = document.querySelector('.close-popup');
+  
+  openPopupButtons.forEach((button) => {
+  button.addEventListener('click', (e) => {
+  e.preventDefault();
+  popupBg.classList.add('active');
+  popup.classList.add('active');
+  })
+  });
+  
+  closePopupButton.addEventListener('click',() => {
+  popupBg.classList.remove('active');
+  popup.classList.remove('active');
+  });
+  
+  document.addEventListener('click', (e) => {
+  if(e.target === popupBg) {
+  popupBg.classList.remove('active');
+  popup.classList.remove('active');}
+  });
+  </script>
+     
+
+
+
+
+<section class="section_11" id="sect11" id="u" > 
   <p style="color:MediumVioletRed;font-family: monospace;font-size:large;"><strong>Задание 11</strong></p> 
         <div style="position:relative;overflow:hidden;">
             <a href="https://yandex.ru/maps/org/federalnoye_gosudarstvennoye_byudzhetnoye_obrazovatelnoye_uchrezhdeniye_vysshego_obrazovaniya_irkutskiy_gosudarstvenny_universitet_putey_soobshcheniya/1156333008/?utm_medium=mapframe&utm_source=maps" 
@@ -529,5 +694,189 @@ a.button1 {
             <iframe src="https://yandex.ru/map-widget/v1/-/CCUBVNDo~A"  frameborder="1" allowfullscreen="true" style="position:relative; width=854px; height=480px;"></iframe>
         </div>
     </section>
+
+  
+  <section class="section_12" id="sect12">
+    <p style="color:RoyalBlue;font-family: monospace;font-size:large; text-align: center;"><strong>Слайдер с космосом</strong></p>  
+  <div class="slider">
+    <div class="item">
+      <img  src = "https://funart.pro/uploads/posts/2021-04/1618450825_44-funart_pro-p-oboi-fon-temnii-kosmos-47.jpg" style="width:901px;height:460px; alt="Первый слайд">
+    </div>
+    <div class="item">
+        <img src="https://get.wallhere.com/photo/1920x1200-px-space-1063277.jpg" style="width:901px;height:460px; alt="Третий слайд">
+      
+    </div>
+    <div class="item">
+        <img src="https://catherineasquithgallery.com/uploads/posts/2021-02/1612188957_159-p-fioletovii-fon-planeti-224.jpg" style="width:901px;height:460px; alt="Второй слайд">
+     
+    </div>
+    <a class="prev" onclick="minusSlide()">&#10094;</a>
+    <a class="next" onclick="plusSlide()">&#10095;</a>
+</div>
+<div class="slider-dots">
+    <span class="slider-dots_item" onclick="currentSlide(1)"></span> 
+    <span class="slider-dots_item" onclick="currentSlide(2)"></span> 
+    <span class="slider-dots_item" onclick="currentSlide(3)"></span> 
+</div>
+
+ <style>
+.slider{
+    max-width: 60%;
+    position: relative;
+    margin: auto;
+    height: 350px;
+    margin-bottom: 50px;
+}
+/* Картинка мастабируется по отношению к родительскому элементу */
+.slider .item img {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+    border: none !important;
+    box-shadow: none !important;
+}
+/* Кнопки вперед и назад */
+.slider .prev, .slider .next {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    top: 65%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+.slider .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+/* При наведении на кнопки добавляем фон кнопок */
+.slider .prev:hover,
+.slider .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* Заголовок слайда */
+.slideText {
+    position: absolute;
+    color: #fff;
+    font-size: 35px;
+    /* Выравнивание текста по горизонтали и по вертикали*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Тень*/
+    text-shadow: 1px 1px 1px #000, 0 0 1em #000;
+}
+/* Кружочки */
+.slider-dots {
+    text-align: center;
+}
+.slider-dots_item{
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active,
+.slider-dots_item:hover {
+    background-color: #aaa;
+}
+/* Анимация слайдов */
+.slider .item {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+ </style>
+
+
+<script>
+  /* Индекс слайда по умолчанию */
+var slideIndex = 1;
+showSlides(slideIndex);
+
+/* Функция увеличивает индекс на 1, показывает следующй слайд*/
+function plusSlide() {
+    showSlides(slideIndex += 1);
+}
+
+/* Функция уменьшяет индекс на 1, показывает предыдущий слайд*/
+function minusSlide() {
+    showSlides(slideIndex -= 1);  
+}
+
+/* Устанавливает текущий слайд */
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+/* Основная функция слайдера */
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("item");
+    var dots = document.getElementsByClassName("slider-dots_item");
+    if (n > slides.length) {
+      slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+</script>
+</section>
+
+
+
+<section class="section_13" id="sect14">
+  <p style="color:RoyalBlue;font-family: monospace;font-size:large; text-align: center;"><strong>Слайдер с космосом</strong></p> 
+</section>
+  
+
+
+
+
+
+
+
+
+<script>
+  function greet() { console.log('Hey there clicker!'); }
+</script>
+
+
 </body>
 </html>
